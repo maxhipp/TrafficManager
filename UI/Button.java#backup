@@ -1,0 +1,19 @@
+package UI;
+import javax.swing.JButton;
+
+/**
+ * Write a description of class Button here.
+ *
+ * @author (your name)
+ * @version (a version number or a date)
+ */
+public class Button{
+    JButton button;
+    public Button(String caption, int posx, int posy, int x, int y){
+        JButton button = new JButton(caption);
+        button.setBounds(posx,posy,x,y);
+        button.setEnabled(true);
+        button.setVisible(true);
+        
+    }
+}

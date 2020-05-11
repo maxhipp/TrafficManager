@@ -2,10 +2,10 @@
 dependency1.from=MAIN
 dependency1.to=MMENU
 dependency1.type=UsesDependency
-editor.fx.0.height=1176
-editor.fx.0.width=1936
-editor.fx.0.x=-8
-editor.fx.0.y=-8
+editor.fx.0.height=739
+editor.fx.0.width=816
+editor.fx.0.x=794
+editor.fx.0.y=411
 objectbench.height=159
 objectbench.width=934
 package.divider.horizontal=0.6

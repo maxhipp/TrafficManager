@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=Map
 comment0.text=\r\n\ Aufbau\ des\ Stra\u00DFensystems\ in\ Form\ eines\ Graphen\ (Knoten\:\ Crossing;\ Kante\:\ Street)\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=size
+comment1.params=mapsize
 comment1.target=Map(int)
 comment2.params=name\ size
 comment2.target=void\ addCrossing(java.lang.String,\ int)

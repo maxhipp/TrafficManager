@@ -2,34 +2,37 @@ package CONTENT;
 
 
 /**
- * Write a description of class Map here.
+ * Aufbau des Straßensystems in Form eines Graphen (Knoten: Crossing; Kante: Street)
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Map
-{
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Map
-     */
-    public Map()
-    {
-        // initialise instance variables
-        x = 0;
+public class Map{
+    private int count;
+    private Crossing[] crossings;
+    private int[][] matrix;
+    
+    public Map(int size){
+        count = 0;
+        crossings = new Crossing[size];
+        matrix = new int[size][size];
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    
+    public void addCrossing(String name, int size){
+        if ((count < crossings.length) && (crossingNumber(name) == -1)){
+            crossings[count] = new Crossing(name, size);
+            matrix[count][count] = 0;
+            for (int i=0; i<count; i++){
+                matrix[count][i] = -1;
+                matrix[i][count] = -1;
+            }
+            count = count + 1;
+        }
+    }
+    
+    public int crossingNumber(String name){
+        int x = -1;
+        //Ermittlung der Nummer
+        return x;
     }
 }

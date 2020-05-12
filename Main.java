@@ -12,6 +12,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.input.ScrollEvent;
 
 import UTIL.*;
 import GRAPHICS.*;
@@ -50,7 +51,25 @@ public class Main extends Application
         stage.show();
         
         map = new Map();
-          
+        
+        scene.addEventFilter(ScrollEvent.SCROLL, new EventHandler<ScrollEvent>() {
+            @Override
+            public void handle(ScrollEvent scrollEvent) {
+                if(scrollEvent.getDeltaY() > 0) {
+                    Vector2D mouseBefore = util.screenToWorld(mousepos, viewpos, viewscale);
+                    viewscale *= 1.05;
+                    Vector2D mouseAfter = util.screenToWorld(mousepos, viewpos, viewscale);                        
+                    viewpos.add(mouseBefore.getSubtracted(mouseAfter));    
+                }
+                if(scrollEvent.getDeltaY() < 0) {
+                    Vector2D mouseBefore = util.screenToWorld(mousepos, viewpos, viewscale);
+                    viewscale *= 0.95;
+                    Vector2D mouseAfter = util.screenToWorld(mousepos, viewpos, viewscale);                        
+                    viewpos.add(mouseBefore.getSubtracted(mouseAfter));    
+                }
+            }
+        });
+        
         scene.addEventFilter(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
                 @Override
                 public void handle(KeyEvent keyEvent) {
@@ -98,8 +117,7 @@ public class Main extends Application
                     mousepos.set(mouseEvent.getSceneX(), mouseEvent.getSceneY());
                 }
             });
-        AnimationTimer animator = new AnimationTimer()
-            {
+        AnimationTimer animator = new AnimationTimer() {
                 @Override
                 public void handle(long arg0) {
                     loop(arg0);    
@@ -113,7 +131,6 @@ public class Main extends Application
     {
         gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
         map.draw(gc, viewpos, viewscale);
-        System.out.println(util.screenToWorld(mousepos, viewpos, viewscale));
     }
     
 }

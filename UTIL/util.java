@@ -19,7 +19,7 @@ public class util
     public static Vector2D screenToWorld(Vector2D screenpos, Vector2D viewpos, double viewscale) 
     {
         double x = screenpos.x / viewscale + viewpos.x;
-        double y = screenpos.x / viewscale + viewpos.x;
+        double y = screenpos.y / viewscale + viewpos.y;
         return new Vector2D(x, y);
     }
 }

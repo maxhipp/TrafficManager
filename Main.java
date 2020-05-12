@@ -46,11 +46,11 @@ public class Main extends Application
         
         Scene scene = new Scene(root);
         stage.setScene(scene);
-        stage.setTitle("MapPanZoom");
+        stage.setTitle("TrafficManager");
         stage.show();
         
         map = new Map();
-        
+          
         scene.addEventFilter(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
                 @Override
                 public void handle(KeyEvent keyEvent) {
@@ -58,8 +58,7 @@ public class Main extends Application
                         Vector2D mouseBefore = util.screenToWorld(mousepos, viewpos, viewscale);
                         viewscale *= 1.01;
                         Vector2D mouseAfter = util.screenToWorld(mousepos, viewpos, viewscale);                        
-                        viewpos.add(mouseBefore.getSubtracted(mouseAfter));
-                        
+                        viewpos.add(mouseBefore.getSubtracted(mouseAfter));                                                
                     }
                     
                     if(keyEvent.getCode() == KeyCode.Q) {
@@ -114,6 +113,7 @@ public class Main extends Application
     {
         gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
         map.draw(gc, viewpos, viewscale);
+        System.out.println(util.screenToWorld(mousepos, viewpos, viewscale));
     }
     
 }

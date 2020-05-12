@@ -11,9 +11,9 @@ import javafx.scene.image.Image;
  */
 public class Textures
 {
-    public static Image textures[] = {new Image("file:default_grass.png", 0, 0, true, false),
-                                      new Image("file:road00.png", 0, 0, true, false),
-                                      new Image("file:road01.png", 0, 0, true, false),
+    public static Image textures[] = {new Image("file:textures/grass.png", 0, 0, true, false),
+                                      new Image("file:textures/street_1.png", 0, 0, true, false),
+                                      new Image("file:textures/street_2.png", 0, 0, true, false),
                                       new Image("file:road02.png", 0, 0, true, false),
                                       new Image("file:road03.png", 0, 0, true, false),};
     

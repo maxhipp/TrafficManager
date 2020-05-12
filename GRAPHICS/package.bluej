@@ -1,16 +1,16 @@
 #BlueJ package file
-dependency1.from=Map
-dependency1.to=Tile
+dependency1.from=Tile
+dependency1.to=Textures
 dependency1.type=UsesDependency
-dependency2.from=Tile
-dependency2.to=Textures
+dependency2.from=Map
+dependency2.to=Tile
 dependency2.type=UsesDependency
-objectbench.height=93
+objectbench.height=92
 objectbench.width=934
 package.divider.horizontal=0.6
-package.divider.vertical=0.765807962529274
-package.editor.height=320
-package.editor.width=823
+package.divider.vertical=0.7681498829039812
+package.editor.height=321
+package.editor.width=826
 package.editor.x=0
 package.editor.y=0
 package.frame.height=527

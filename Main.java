@@ -18,6 +18,7 @@ import GRAPHICS.*;
 /**
  * Beschreiben Sie hier die Klasse Main.
  * 
+ * 
  * @author tresonic & maxx
  * @version 20200512
  */

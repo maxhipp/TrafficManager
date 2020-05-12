@@ -15,6 +15,7 @@ import javafx.scene.input.MouseEvent;
 
 import UTIL.*;
 import GRAPHICS.*;
+
 /**
  * Beschreiben Sie hier die Klasse Main.
  * 
@@ -54,14 +55,18 @@ public class Main extends Application
                 @Override
                 public void handle(KeyEvent keyEvent) {
                     if(keyEvent.getCode() == KeyCode.E) {
+                        Vector2D mouseBefore = util.screenToWorld(mousepos, viewpos, viewscale);
                         viewscale *= 1.01;
-                        //Vector2D mid = new Vector2D(scene.getWidth()/2, scene.getHeight()/2);
-                        //viewpos.add(new Vector2D(mid
+                        Vector2D mouseAfter = util.screenToWorld(mousepos, viewpos, viewscale);                        
+                        viewpos.add(mouseBefore.getSubtracted(mouseAfter));
+                        
                     }
                     
                     if(keyEvent.getCode() == KeyCode.Q) {
+                        Vector2D mouseBefore = util.screenToWorld(mousepos, viewpos, viewscale);
                         viewscale *= 0.99;
-                        
+                        Vector2D mouseAfter = util.screenToWorld(mousepos, viewpos, viewscale);                        
+                        viewpos.add(mouseBefore.getSubtracted(mouseAfter));                        
                     }
                     
                     if(keyEvent.getCode() == KeyCode.W) {

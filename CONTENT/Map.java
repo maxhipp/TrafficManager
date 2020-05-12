@@ -8,14 +8,12 @@ package CONTENT;
  * @version (a version number or a date)
  */
 public class Map{
-    private int count;
-    private Crossing[] crossings;
-    private int[][] matrix;
+    private int map[][];
     
     public Map(int size){
         count = 0;
         crossings = new Crossing[size];
-        matrix = new int[size][size];
+        map = new int[size][size];
     }
     
     public void addCrossing(String name, int size){

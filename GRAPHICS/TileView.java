@@ -110,5 +110,11 @@ public class TileView
     public void draw()
     {
         map.draw(gc, viewpos, viewscale);
+        Vector2D mouseWorldPos = util.screenToWorld(mousepos, viewpos, viewscale);
+        Vector2D selectedTileWorldPos = new Vector2D((int)mouseWorldPos.x/64*64, (int)mouseWorldPos.y/64*64);
+        Vector2D selectedTileScreenPos = util.worldToScreen(selectedTileWorldPos, viewpos, viewscale);
+        gc.setStroke(Color.WHITE);
+        gc.strokeRect(selectedTileScreenPos.x, selectedTileScreenPos.y, map.getSize(), map.getSize());
+        System.out.println(selectedTileWorldPos);
     }
 }

@@ -41,5 +41,8 @@ public class Map
     {
         map[(int)((clickpos.y / viewscale + viewpos.y)/this.size)][(int)((clickpos.x / viewscale + viewpos.x)/this.size)].id = id;
     }
+    
 
+    public int getSize() {return this.size;}
+        
 }

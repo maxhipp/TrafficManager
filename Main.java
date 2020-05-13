@@ -30,10 +30,8 @@ public class Main extends Application
     private Canvas canvas;
     private GraphicsContext gc;
     private Map map;
+    private TileView tileView;
     
-    public Vector2D mousepos = new Vector2D();
-    public Vector2D viewpos = new Vector2D(0, 0);
-    private double viewscale = 1;
 
     @Override
     public void start(Stage stage) throws Exception
@@ -51,72 +49,8 @@ public class Main extends Application
         stage.show();
         
         map = new Map();
-        
-        scene.addEventFilter(ScrollEvent.SCROLL, new EventHandler<ScrollEvent>() {
-            @Override
-            public void handle(ScrollEvent scrollEvent) {
-                if(scrollEvent.getDeltaY() > 0) {
-                    Vector2D mouseBefore = util.screenToWorld(mousepos, viewpos, viewscale);
-                    viewscale *= 1.05;
-                    Vector2D mouseAfter = util.screenToWorld(mousepos, viewpos, viewscale);                        
-                    viewpos.add(mouseBefore.getSubtracted(mouseAfter));    
-                }
-                if(scrollEvent.getDeltaY() < 0) {
-                    Vector2D mouseBefore = util.screenToWorld(mousepos, viewpos, viewscale);
-                    viewscale *= 0.95;
-                    Vector2D mouseAfter = util.screenToWorld(mousepos, viewpos, viewscale);                        
-                    viewpos.add(mouseBefore.getSubtracted(mouseAfter));    
-                }
-            }
-        });
-        
-        scene.addEventFilter(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
-                @Override
-                public void handle(KeyEvent keyEvent) {
-                    if(keyEvent.getCode() == KeyCode.E) {
-                        Vector2D mouseBefore = util.screenToWorld(mousepos, viewpos, viewscale);
-                        viewscale *= 1.01;
-                        Vector2D mouseAfter = util.screenToWorld(mousepos, viewpos, viewscale);                        
-                        viewpos.add(mouseBefore.getSubtracted(mouseAfter));                                                
-                    }
-                    
-                    if(keyEvent.getCode() == KeyCode.Q) {
-                        Vector2D mouseBefore = util.screenToWorld(mousepos, viewpos, viewscale);
-                        viewscale *= 0.99;
-                        Vector2D mouseAfter = util.screenToWorld(mousepos, viewpos, viewscale);                        
-                        viewpos.add(mouseBefore.getSubtracted(mouseAfter));                        
-                    }
-                    
-                    if(keyEvent.getCode() == KeyCode.W) {
-                        viewpos.add(new Vector2D(0, -10));
-                    }
-                    if(keyEvent.getCode() == KeyCode.A) {
-                        viewpos.add(new Vector2D(-10, 0));
-                    }
-                    if(keyEvent.getCode() == KeyCode.S) {
-                        viewpos.add(new Vector2D(0, 10));
-                    }
-                    if(keyEvent.getCode() == KeyCode.D) {
-                        viewpos.add(new Vector2D(10, 0));
-                    }
-                }
-            });
-        
-        scene.addEventFilter(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>() {
-                @Override
-                public void handle(MouseEvent mouseEvent) {
-                    if(mouseEvent.isPrimaryButtonDown()) {
-                        map.setTile(new Vector2D(mouseEvent.getSceneX(), mouseEvent.getSceneY()), viewpos, viewscale, (byte)2);
-                    }
-                }
-            });
+        tileView = new TileView(gc, scene);
             
-        scene.addEventFilter(MouseEvent.MOUSE_MOVED, new EventHandler<MouseEvent>() {
-                @Override
-                public void handle(MouseEvent mouseEvent) {
-                    mousepos.set(mouseEvent.getSceneX(), mouseEvent.getSceneY());
-                }
-            });
         AnimationTimer animator = new AnimationTimer() {
                 @Override
                 public void handle(long arg0) {
@@ -130,7 +64,7 @@ public class Main extends Application
     public void loop(long delta)
     {
         gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
-        map.draw(gc, viewpos, viewscale);
+        tileView.draw();
     }
     
 }

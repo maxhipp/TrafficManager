@@ -7,7 +7,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.paint.*;
 import javafx.scene.canvas.*;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.*;
+import javafx.scene.control.Button;
 
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -29,9 +30,7 @@ public class Main extends Application
     // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
     private Canvas canvas;
     private GraphicsContext gc;
-    private Map map;
     private TileView tileView;
-    
 
     @Override
     public void start(Stage stage) throws Exception
@@ -48,7 +47,8 @@ public class Main extends Application
         stage.setTitle("TrafficManager");
         stage.show();
         
-        map = new Map();
+        MouseKeyEvent m = new MouseKeyEvent();
+        root.addEventFilter(KeyEvent.KEY_PRESSED, m);
         tileView = new TileView(gc, scene);
             
         AnimationTimer animator = new AnimationTimer() {

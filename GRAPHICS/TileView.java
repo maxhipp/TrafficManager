@@ -105,16 +105,29 @@ public class TileView
                     mousepos.set(mouseEvent.getSceneX(), mouseEvent.getSceneY());
                 }
             });
+            
+        this.scene.addEventFilter(MouseEvent.MOUSE_DRAGGED, new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent mouseEvent) {
+                    mousepos.set(mouseEvent.getSceneX(), mouseEvent.getSceneY());
+                    if(mouseEvent.isPrimaryButtonDown()) {
+                        map.setTile(new Vector2D(mouseEvent.getSceneX(), mouseEvent.getSceneY()), viewpos, viewscale, (byte)2);
+                    }
+                }
+            });
     }
 
     public void draw()
     {
-        map.draw(gc, viewpos, viewscale);
-        Vector2D mouseWorldPos = util.screenToWorld(mousepos, viewpos, viewscale);
-        Vector2D selectedTileWorldPos = new Vector2D((int)mouseWorldPos.x/64*64, (int)mouseWorldPos.y/64*64);
+        this.map.draw(this.gc, this.viewpos, this.viewscale);
+        
+        Vector2D mouseWorldPos = util.screenToWorld(this.mousepos, this.viewpos, this.viewscale);
+        // get the world pos of the tile currently hovered over
+        Vector2D selectedTileWorldPos = new Vector2D((int)mouseWorldPos.x/this.map.getSize()*this.map.getSize(), (int)mouseWorldPos.y/this.map.getSize()*this.map.getSize());
+        // convert that to screen position
         Vector2D selectedTileScreenPos = util.worldToScreen(selectedTileWorldPos, viewpos, viewscale);
+        // draw a white square with the size of a tile with at the screen position
         gc.setStroke(Color.WHITE);
-        gc.strokeRect(selectedTileScreenPos.x, selectedTileScreenPos.y, map.getSize(), map.getSize());
-        System.out.println(selectedTileWorldPos);
+        gc.strokeRect(selectedTileScreenPos.x, selectedTileScreenPos.y, this.map.getSize()*viewscale, this.map.getSize()*viewscale);
     }
 }

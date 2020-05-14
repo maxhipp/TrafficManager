@@ -1,6 +1,10 @@
 #BlueJ class context
-comment0.target=MAIN
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ MAIN\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=
-comment1.target=MAIN()
-numComments=2
+comment0.target=Main
+comment0.text=\r\n\ Beschreiben\ Sie\ hier\ die\ Klasse\ Main.\r\n\ \r\n\ \r\n\ @author\ tresonic\ &\ maxx\r\n\ @version\ 20200512\r\n
+comment1.params=stage
+comment1.target=void\ start(javafx.stage.Stage)
+comment2.params=arg0
+comment2.target=void\ handle(long)
+comment3.params=delta
+comment3.target=void\ loop(long)
+numComments=4

@@ -6,8 +6,12 @@ package CONTENT;
  * @version (a version number or a date)
  */
 public class Street{
+    private Crossing tocrossing;
     
-    public Street(){
-        
+    public Street(Crossing tocrossing){
+        this.tocrossing = tocrossing;
+    }
+    public int returnToCrossing(){
+        return tocrossing.returnID();
     }
 }

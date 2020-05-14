@@ -1,6 +1,8 @@
 #BlueJ class context
 comment0.target=Street
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Street\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=
-comment1.target=Street()
-numComments=2
+comment1.params=tocrossing
+comment1.target=Street(Crossing)
+comment2.params=
+comment2.target=int\ returnToCrossing()
+numComments=3

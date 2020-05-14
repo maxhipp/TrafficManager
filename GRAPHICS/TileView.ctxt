@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=TileView
+comment0.text=\r\n\ Beschreiben\ Sie\ hier\ die\ Klasse\ TileView.\r\n\ \r\n\ @author\ tresonic\r\n\ @version\ 20200513\r\n
+comment1.params=gc\ sc
+comment1.target=TileView(javafx.scene.canvas.GraphicsContext,\ javafx.scene.Scene)
+comment1.text=\r\n\ Konstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ TileView\r\n
+comment2.params=scrollEvent
+comment2.target=void\ handle(javafx.scene.input.ScrollEvent)
+comment3.params=keyEvent
+comment3.target=void\ handle(javafx.scene.input.KeyEvent)
+comment4.params=mouseEvent
+comment4.target=void\ handle(javafx.scene.input.MouseEvent)
+comment5.params=mouseEvent
+comment5.target=void\ handle(javafx.scene.input.MouseEvent)
+comment6.params=
+comment6.target=void\ draw()
+numComments=7

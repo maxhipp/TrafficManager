@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=util
+comment0.text=\r\n\ Beschreiben\ Sie\ hier\ die\ Klasse\ util.\r\n\ \r\n\ @author\ (Ihr\ Name)\ \r\n\ @version\ (eine\ Versionsnummer\ oder\ ein\ Datum)\r\n
+comment1.params=worldpos\ viewpos\ viewscale
+comment1.target=Vector2D\ worldToScreen(Vector2D,\ Vector2D,\ double)
+comment2.params=screenpos\ viewpos\ viewscale
+comment2.target=Vector2D\ screenToWorld(Vector2D,\ Vector2D,\ double)
+numComments=3

@@ -1,6 +1,10 @@
 #BlueJ class context
 comment0.target=Crossing
 comment0.text=\r\n\ Crossings\ sind\ die\ Knoten\ des\ Graphen\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=name\ size
-comment1.target=Crossing(java.lang.String,\ int)
-numComments=2
+comment1.params=id
+comment1.target=Crossing(int)
+comment2.params=
+comment2.target=int\ returnID()
+comment3.params=tocrossing
+comment3.target=void\ addStreet(Crossing)
+numComments=4

@@ -60,12 +60,28 @@ public class MapGraph{
             System.out.println("At least 1 crossing could not be found!");
         }
     }
-    
-    public void removeCrossing(){
+
+    public void removeCrossing(int crid){
+        for(int i = 0; i < crossings.size(); i++){
+            if(crid == (crossings.get(i)).returnID()){
+                
+                break;
+            }
+            else{
+                System.out.println("Crossing could not be found");
+            }
+        }
+    }
+
+    public void removeStreet(){
         
     }
     
-    public void removeStreet(){
-        
+    public void returnStats(){
+        int counter = 0;
+        for(int i = 0; i < crossings.size(); i++){
+            counter++;
+        }
+        System.out.println("Numbers of Crossings: " + counter);
     }
 }

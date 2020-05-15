@@ -4,8 +4,8 @@ import java.util.ArrayList;
 /**
  * Crossings sind die Knoten des Graphen
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @Max Hipp
+ * @15.05.2020
  */
 public class Crossing{
     private int id;
@@ -20,5 +20,8 @@ public class Crossing{
     }
     public void addStreet(Crossing tocrossing){
         streets.add(new Street(tocrossing));
+    }
+    public void removeStreet(){
+        
     }
 }

@@ -1,10 +1,16 @@
 #BlueJ class context
 comment0.target=MapGraph
-comment0.text=\r\n\ Aufbau\ des\ Stra\u00DFensystems\ in\ Form\ eines\ Graphen\ (Knoten\:\ Crossing;\ Kante\:\ Street)\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Heimat\ der\ Adjazenzliste\ des\ Mapgraphen\r\n\r\n\ @Max\ Hipp\r\n\ @15.05.2020\r\n
 comment1.params=
 comment1.target=MapGraph()
 comment2.params=id
 comment2.target=void\ addCrossing(int)
+comment2.text=\r\n\ f\u00FCgt\ eine\ neue\ Crosing\ hinzu\r\n
 comment3.params=fromid\ toid
 comment3.target=void\ addStreet(int,\ int)
-numComments=4
+comment3.text=\r\n\ f\u00FCgt\ eine\ Street\ (Kante)\ zwischen\ zwei\ Crossings\ (Knoten)\ hinzu\r\n
+comment4.params=
+comment4.target=void\ removeCrossing()
+comment5.params=
+comment5.target=void\ removeStreet()
+numComments=6

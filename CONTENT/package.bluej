@@ -1,8 +1,8 @@
 #BlueJ package file
-dependency1.from=MapGraph
+dependency1.from=Street
 dependency1.to=Crossing
 dependency1.type=UsesDependency
-dependency2.from=Street
+dependency2.from=MapGraph
 dependency2.to=Crossing
 dependency2.type=UsesDependency
 dependency3.from=Crossing

@@ -11,8 +11,9 @@ public class Station{
     int currpassengers;
     int size;
     
-    public Station(int size){
+    public Station(int size, Crossing crnb1, Crossing crnb2){
         this.size = size;
+        
     }
     
     public void updatePassengers(){

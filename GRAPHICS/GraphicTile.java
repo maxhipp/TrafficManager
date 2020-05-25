@@ -1,5 +1,5 @@
 package GRAPHICS;
-
+import CONTENT.*;
 import UTIL.*;
 import javafx.scene.canvas.*;
 /**
@@ -8,13 +8,12 @@ import javafx.scene.canvas.*;
  * @author (Ihr Name) 
  * @version (eine Versionsnummer oder ein Datum)
  */
-public class Tile
-{
+public class GraphicTile{
     public Vector2D pos;
     public byte id;
     
-    public Tile(byte id, double x, double y)
-    {
+    public GraphicTile(byte id, double x, double y){
+        
         this.pos = new Vector2D(x, y);
         this.id = id;
     }

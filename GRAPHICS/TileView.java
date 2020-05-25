@@ -28,7 +28,7 @@ public class TileView
     
     private Scene scene;
     private GraphicsContext gc;
-    private Map map;
+    private GraphicMap map;
     
     /**
      * Konstruktor für Objekte der Klasse TileView
@@ -37,7 +37,7 @@ public class TileView
     {
         this.gc = gc;
         this.scene = sc;
-        map = new Map();
+        map = new GraphicMap();
         
         
         this.scene.addEventFilter(ScrollEvent.SCROLL, new EventHandler<ScrollEvent>() {

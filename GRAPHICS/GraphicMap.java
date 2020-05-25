@@ -1,5 +1,5 @@
 package GRAPHICS;
-
+import CONTENT.*;
 import UTIL.*;
 import javafx.scene.image.Image;
 import javafx.scene.canvas.*;
@@ -9,21 +9,20 @@ import javafx.scene.canvas.*;
  * @author (Ihr Name) 
  * @version (eine Versionsnummer oder ein Datum)
  */
-public class Map
-{
-    private Tile map[][];
+public class GraphicMap extends Map{
+    private GraphicTile map[][];
     private static int size = 64;
 
     /**
      * Konstruktor für Objekte der Klasse Tile
      * 
      */
-    public Map()
+    public GraphicMap()
     {
-        map = new Tile[128][128];
+        map = new GraphicTile[128][128];
         for(int x=0; x<128; x++) {
             for(int y=0; y<128; y++) {
-                map[y][x] = new Tile((byte)0, x*size, y*size);
+                map[y][x] = new GraphicTile((byte)0, x*size, y*size);
             }
         } 
     }

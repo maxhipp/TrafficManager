@@ -1,8 +1,8 @@
 #BlueJ class context
-comment0.target=Tile
+comment0.target=GraphicTile
 comment0.text=\r\n\ Beschreiben\ Sie\ hier\ die\ Klasse\ Tile.\r\n\ \r\n\ @author\ (Ihr\ Name)\ \r\n\ @version\ (eine\ Versionsnummer\ oder\ ein\ Datum)\r\n
 comment1.params=id\ x\ y
-comment1.target=Tile(byte,\ double,\ double)
+comment1.target=GraphicTile(byte,\ double,\ double)
 comment2.params=gc\ viewpos\ viewscale
 comment2.target=void\ draw(javafx.scene.canvas.GraphicsContext,\ UTIL.Vector2D,\ double)
 numComments=3

@@ -20,6 +20,9 @@ public class MapGraph{
     public void addCrossing(int id){
         crossings.add(crossings.size(), new Crossing(id));
     }
+    public void addStation(){
+        
+    }
 
     /**
      * fügt eine Street (Kante) zwischen zwei Crossings (Knoten) hinzu
@@ -59,6 +62,10 @@ public class MapGraph{
         else{
             System.out.println("At least 1 crossing could not be found!");
         }
+    }
+    
+    public void aTob(Crossing a, Crossing b){
+        
     }
 
     public void removeCrossing(int crid){
